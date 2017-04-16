@@ -1,3 +1,7 @@
 Rails.application.routes.draw do
-    resources :resume, only: :index
+
+  devise_for :users
+
+  resources :resume, only: :index
+
 end
