@@ -11,7 +11,73 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170414084209) do
+ActiveRecord::Schema.define(version: 20170416083936) do
+
+  create_table "hobbies", force: :cascade do |t|
+    t.string   "hobby_name", limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "hobby_episodes", force: :cascade do |t|
+    t.string   "hobby_user_id", limit: 255
+    t.text     "title",         limit: 65535
+    t.text     "episode",       limit: 65535
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "hobby_users", force: :cascade do |t|
+    t.string   "hobby_id",   limit: 255
+    t.string   "user_id",    limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "license_episodes", force: :cascade do |t|
+    t.string   "license_user_id", limit: 255
+    t.text     "title",           limit: 65535
+    t.text     "episode",         limit: 65535
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "license_users", force: :cascade do |t|
+    t.string   "license_id", limit: 255
+    t.string   "user_id",    limit: 255
+    t.datetime "date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "licenses", force: :cascade do |t|
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.string   "license_name", limit: 255
+  end
+
+  create_table "school_episodes", force: :cascade do |t|
+    t.string   "school_user_id", limit: 255
+    t.text     "title",          limit: 65535
+    t.text     "episode",        limit: 65535
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "school_users", force: :cascade do |t|
+    t.string   "school_id",  limit: 255
+    t.string   "user_id",    limit: 255
+    t.string   "in_out",     limit: 255
+    t.datetime "date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "schools", force: :cascade do |t|
+    t.string   "school_name", limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "name",                   limit: 255
