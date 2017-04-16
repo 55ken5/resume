@@ -1,4 +1,7 @@
 class CreateLicenseUsers < ActiveRecord::Migration
+
+
+
   def change
     create_table :license_users do |t|
       t.string  :license_id

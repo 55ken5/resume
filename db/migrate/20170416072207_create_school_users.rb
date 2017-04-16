@@ -1,7 +1,6 @@
 class CreateSchoolUsers < ActiveRecord::Migration
 
-belongs_to :user
-belongs_to :school
+
 
   def change
     create_table :school_users do |t|

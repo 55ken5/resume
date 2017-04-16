@@ -1,6 +1,5 @@
 class CreateSchools < ActiveRecord::Migration
 
-  has_many :users, through: :school_users
 
 
   def change
